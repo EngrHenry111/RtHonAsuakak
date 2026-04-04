@@ -1,21 +1,7 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "ibionoibomlga.vercel.app"
-        }
-      ],
-      "destination": "studenttoolsng.com/$1",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
+{ "rewrites": 
     {
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ]
+  
 }
