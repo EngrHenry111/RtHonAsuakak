@@ -13,7 +13,7 @@ const Skills = () => {
       <h2>Skills</h2>
 
       {skills.map(skill => (
-        <div key={skill._id}>
+        <div key={skill._id} data-level={skill.level}>
           <p>{skill.name} - {skill.level}</p>
         </div>
       ))}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import logo from "../../../assets/logo.jpeg"
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -8,7 +9,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       {/* LEFT: LOGO */}
-      <h2 className="logo">Chairman</h2>
+      <img style={{width: "90px", }} src={logo} alt="Hon. Asuakak Umoh" />
+      {/* <h2 className="logo">Executive Chairman</h2> */}
 
       {/* RIGHT: HAMBURGER */}
       <div

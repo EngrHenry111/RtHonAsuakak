@@ -37,7 +37,7 @@ const SkillsPage = () => {
       <h2>Skills</h2>
 
       <input placeholder="Skill" onChange={e => setForm({...form, name:e.target.value})}/>
-      <input placeholder="Level" onChange={e => setForm({...form, level:e.target.value})}/>
+      <input placeholder="Level: Beginner | Intermediate | Expert" onChange={e => setForm({...form, level:e.target.value})}/>
 
       <button onClick={submit}>{id ? "Update" : "Add"}</button>
 

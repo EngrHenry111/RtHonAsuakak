@@ -115,43 +115,65 @@
 }
 
 /* Brand colors on hover */
+/* ===== BRAND COLORS (SOFT DEFAULT STATE) ===== */
+
+/* Facebook */
+.icon.facebook {
+  color: #1877f2;
+}
+
+/* Instagram */
+.icon.instagram {
+  color: #e1306c;
+}
+
+/* YouTube */
+.icon.youtube {
+  color: #ff0000;
+}
+
+/* TikTok */
+.icon.tiktok {
+  color: #ffffff;
+}
+
+/* LinkedIn */
+.icon.linkedin {
+  color: #0077b5;
+}
+
+/* ===== HOVER EFFECT (FULL COLOR POP) ===== */
+
 .icon.facebook:hover {
   background: #1877f2;
+  color: white;
+  box-shadow: 0 0 15px #1877f2;
 }
 
 .icon.instagram:hover {
   background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  color: white;
+  box-shadow: 0 0 15px #dd2a7b;
 }
 
 .icon.youtube:hover {
   background: #ff0000;
+  color: white;
+  box-shadow: 0 0 15px #ff0000;
 }
 
 .icon.tiktok:hover {
-  background: #000;
+  background: linear-gradient(45deg, #00f2ea, #ff0050);
+  color: white;
+  box-shadow: 0 0 15px #ff0050;
 }
 
 .icon.linkedin:hover {
   background: #0077b5;
-}
-
-.icon {
-  width: 45px;
-  height: 45px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-  font-size: 18px;
-
-  background: rgba(255, 255, 255, 0.05);
   color: white;
-
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px #0077b5;
 }
+
 
 /* Hover effect */
 .icon:hover {
@@ -167,5 +189,10 @@
 
   .social-icons {
     align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .social-icons {
+    grid-template-columns: repeat(4, 1fr); /* tighter layout */
   }
 }

@@ -6,122 +6,6 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 80px 24px;
-
-  overflow: hidden;
-}
-
-/* Title */
-.skills h2 {
-  text-align: center;
-  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
-  margin-bottom: 50px;
-}
-
-/* ===============================
-   SKILL ITEM
-================================= */
-.skills > div {
-  margin-bottom: 25px;
-}
-
-/* Skill text */
-.skills p {
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-  color: rgba(241, 245, 249, 0.9);
-}
-
-/* ===============================
-   PROGRESS BAR BASE
-================================= */
-.skills > div::after {
-  content: "";
-  display: block;
-  height: 10px;
-  border-radius: 20px;
-
-  background: rgba(255,255,255,0.08);
-  overflow: hidden;
-  position: relative;
-}
-
-/* ===============================
-   PROGRESS FILL (DYNAMIC LOOK)
-================================= */
-.skills > div::before {
-  content: "";
-  position: absolute;
-
-  height: 10px;
-  border-radius: 20px;
-
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-
-  width: 0;
-  animation: fillBar 1.5s ease forwards;
-}
-
-/* Animate width based on level text */
-.skills > div[data-level="Beginner"]::before { width: 40%; }
-.skills > div[data-level="Intermediate"]::before { width: 65%; }
-.skills > div[data-level="Advanced"]::before { width: 85%; }
-.skills > div[data-level="Expert"]::before { width: 100%; }
-
-
-
-
-
-/* ===============================
-   ANIMATION
-================================= */
-@keyframes fillBar {
-  from { width: 0; }
-}
-
-/* ===============================
-   RESPONSIVE DESIGN
-================================= */
-
-/* Tablet */
-@media (max-width: 768px) {
-  .skills {
-    padding: 50px 16px;
-  }
-
-  .skills h2 {
-    font-size: 1.6rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .skills {
-    padding: 40px 14px;
-  }
-
-  .skills p {
-    font-size: 0.85rem;
-  }
-}
-
-/* ===============================
-   OVERFLOW PROTECTION
-================================= */
-.skills,
-.skills * {
-  max-width: 100%;
-  word-break: break-word;
-}
-
-
-/* ===============================
-   SKILLS SECTION
-================================= */
-.skills {
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 80px 24px;
 }
 
 /* Title */
@@ -142,7 +26,7 @@
 /* Label */
 .skills p {
   font-size: 0.95rem;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: rgba(241, 245, 249, 0.9);
 }
 
@@ -155,11 +39,10 @@
   height: 10px;
   border-radius: 20px;
   background: rgba(255,255,255,0.08);
-  overflow: hidden;
 }
 
 /* ===============================
-   GLOW PROGRESS BAR
+   SHARP GLOW PROGRESS BAR
 ================================= */
 .skills > div::before {
   content: "";
@@ -170,6 +53,7 @@
   height: 10px;
   border-radius: 20px;
 
+  /* STRONG GRADIENT */
   background: linear-gradient(
     90deg,
     var(--primary),
@@ -179,13 +63,18 @@
 
   background-size: 200% 100%;
 
-  box-shadow: 0 0 10px var(--primary),
-              0 0 20px var(--secondary);
+  /* 🔥 SHARP GLOW */
+  box-shadow:
+    0 0 5px var(--primary),
+    0 0 10px var(--primary),
+    0 0 20px var(--secondary),
+    0 0 35px var(--secondary);
 
-  animation: growBar 1.5s ease forwards,
-             glowFlow 3s linear infinite;
-
+  /* animation */
   width: 0;
+  animation:
+    growBar 1.5s ease forwards,
+    glowMove 2.5s linear infinite;
 }
 
 /* ===============================
@@ -200,23 +89,26 @@
    ANIMATIONS
 ================================= */
 
-/* Growth animation */
+/* Fill animation */
 @keyframes growBar {
   from { width: 0; }
 }
 
-/* Glow moving effect */
-@keyframes glowFlow {
+/* Moving glow */
+@keyframes glowMove {
   0% { background-position: 0% 50%; }
   100% { background-position: 200% 50%; }
 }
 
 /* ===============================
-   HOVER ENHANCEMENT
+   HOVER (BOOST GLOW)
 ================================= */
 .skills > div:hover::before {
-  box-shadow: 0 0 15px var(--primary),
-              0 0 30px var(--secondary);
+  box-shadow:
+    0 0 10px var(--primary),
+    0 0 20px var(--primary),
+    0 0 35px var(--secondary),
+    0 0 50px var(--secondary);
 }
 
 /* ===============================
@@ -239,7 +131,7 @@
 }
 
 /* ===============================
-   OVERFLOW PROTECTION
+   SAFETY
 ================================= */
 .skills,
 .skills * {
