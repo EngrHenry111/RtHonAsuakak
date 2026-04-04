@@ -1,0 +1,176 @@
+/* ===============================
+   GALLERY SECTION
+================================= */
+.gallery {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+
+  overflow: hidden;
+}
+
+/* Title */
+.gallery h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* Subtle glow background */
+.gallery::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: var(--primary);
+  filter: blur(140px);
+  opacity: 0.1;
+  bottom: -120px;
+  left: -120px;
+  z-index: 0;
+}
+
+/* ===============================
+   GRID SYSTEM
+================================= */
+.grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+/* ===============================
+   IMAGE CARD STYLE
+================================= */
+.gallery-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+
+  cursor: pointer;
+}
+
+/* Hover effect (premium feel) */
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--glow);
+  filter: brightness(1.1);
+}
+
+/* ===============================
+   IMAGE OVERLAY EFFECT
+================================= */
+.gallery-img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-img:hover::after {
+  opacity: 1;
+}
+
+/* ===============================
+   ENTRY ANIMATION
+================================= */
+.grid .gallery-img {
+  opacity: 0;
+  animation: fadeZoom 0.6s ease forwards;
+}
+
+/* Stagger animation */
+.grid .gallery-img:nth-child(1) { animation-delay: 0.1s; }
+.grid .gallery-img:nth-child(2) { animation-delay: 0.2s; }
+.grid .gallery-img:nth-child(3) { animation-delay: 0.3s; }
+.grid .gallery-img:nth-child(4) { animation-delay: 0.4s; }
+.grid .gallery-img:nth-child(5) { animation-delay: 0.5s; }
+.grid .gallery-img:nth-child(6) { animation-delay: 0.6s; }
+
+/* Keyframes */
+@keyframes fadeZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Laptop */
+@media (max-width: 1024px) {
+  .gallery {
+    padding: 60px 20px;
+  }
+
+  .grid {
+    gap: 16px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .gallery {
+    padding: 50px 16px;
+  }
+
+  .gallery h2 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-img {
+    height: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .gallery {
+    padding: 40px 14px;
+  }
+
+  .gallery h2 {
+    font-size: 1.4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-img {
+    height: 180px;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.gallery,
+.grid,
+.gallery-img {
+  max-width: 100%;
+}
+
+.gallery-img {
+  display: block;
+}

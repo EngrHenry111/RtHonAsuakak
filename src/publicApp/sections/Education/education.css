@@ -1,0 +1,170 @@
+/* ===============================
+   EDUCATION SECTION
+================================= */
+.education {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 24px;
+
+  overflow: hidden;
+}
+
+/* Title */
+.education h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.3rem);
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* ===============================
+   TIMELINE STRUCTURE
+================================= */
+.education > div {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 40px;
+}
+
+/* Vertical line */
+.education::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 120px;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* Dot */
+.education > div::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+/* ===============================
+   CARD STYLE
+================================= */
+.education > div {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 20px 20px 20px 25px;
+
+  backdrop-filter: blur(10px);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+.education > div:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--glow);
+}
+
+/* ===============================
+   CONTENT STYLING
+================================= */
+.education h4 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.education p {
+  font-size: 0.9rem;
+  color: rgba(241, 245, 249, 0.85);
+  line-height: 1.6;
+}
+
+/* Year style */
+.education p:last-child {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* ===============================
+   ENTRY ANIMATION
+================================= */
+.education > div {
+  opacity: 0;
+  animation: slideFade 0.6s ease forwards;
+}
+
+/* Stagger */
+.education > div:nth-child(2) { animation-delay: 0.1s; }
+.education > div:nth-child(3) { animation-delay: 0.2s; }
+.education > div:nth-child(4) { animation-delay: 0.3s; }
+.education > div:nth-child(5) { animation-delay: 0.4s; }
+
+/* Keyframes */
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .education {
+    padding: 50px 16px;
+  }
+
+  .education::before {
+    left: 10px;
+  }
+
+  .education > div {
+    padding-left: 30px;
+  }
+
+  .education > div::before {
+    left: -10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .education {
+    padding: 40px 14px;
+  }
+
+  .education h2 {
+    font-size: 1.4rem;
+  }
+
+  .education h4 {
+    font-size: 1rem;
+  }
+
+  .education p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.education,
+.education * {
+  max-width: 100%;
+  word-break: break-word;
+}

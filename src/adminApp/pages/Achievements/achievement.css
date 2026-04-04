@@ -1,0 +1,143 @@
+/* ===============================
+   ADMIN ACHIEVEMENTS PAGE
+================================= */
+.admin-achievements {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Title */
+.admin-achievements h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* ===============================
+   FORM CONTAINER
+================================= */
+.admin-achievements {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+/* Inputs */
+.admin-achievements input,
+.admin-achievements textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.05);
+  color: var(--text-light);
+
+  outline: none;
+  transition: 0.3s ease;
+}
+
+/* Focus */
+.admin-achievements input:focus,
+.admin-achievements textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Textarea */
+.admin-achievements textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ===============================
+   BUTTON
+================================= */
+.admin-achievements button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.admin-achievements button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* ===============================
+   LIST ITEMS
+================================= */
+.admin-achievements > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 15px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Title */
+.admin-achievements h4 {
+  font-size: 1rem;
+}
+
+/* Delete button */
+.admin-achievements > div button {
+  background: crimson;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.admin-achievements > div button:hover {
+  background: red;
+  box-shadow: 0 0 10px red;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  .admin-achievements {
+    padding: 30px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-achievements {
+    padding: 25px 14px;
+  }
+
+  .admin-achievements h2 {
+    font-size: 1.4rem;
+  }
+
+  .admin-achievements input,
+  .admin-achievements textarea {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.admin-achievements,
+.admin-achievements * {
+  max-width: 100%;
+  word-break: break-word;
+}

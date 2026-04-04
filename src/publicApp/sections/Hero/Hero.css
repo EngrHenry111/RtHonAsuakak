@@ -1,0 +1,247 @@
+/* ===============================
+   HERO SECTION
+================================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 100px 20px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: radial-gradient(circle at center, #020617, #000);
+}
+
+/* ===============================
+   CONTAINER (VERTICAL LAYOUT)
+================================= */
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  gap: 40px; /* spacing between image and text */
+
+  max-width: 800px;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+/* ===============================
+   IMAGE SECTION (TOP)
+================================= */
+.hero-image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 0px;
+}
+
+/* Ring */
+.image-ring {
+  padding: 12px;
+  border-radius: 100%;
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  animation: rotateRing 10s linear infinite;
+}
+
+/* Image */
+.image-ring img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 6px solid #f5b25adc;
+  object-fit: cover;
+}
+
+/* ===============================
+   TEXT SECTION (BOTTOM)
+================================= */
+.hero-text {
+  max-width: 700px;
+}
+
+/* Name */
+.hero-text h1 {
+  font-size: clamp(2.3rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* Typing */
+.typing {
+  font-size: clamp(1.5rem, 2vw, 1.5rem);
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+/* Bio */
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+/* Button */
+.hero-text .btn {
+  margin-top: 10px;
+}
+
+/* ===============================
+   ANIMATIONS (SAFE)
+================================= */
+@keyframes rotateRing {
+  to { transform: rotate(360deg); }
+}
+
+.hero-image-wrapper {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* ===============================
+   PARTICLES
+================================= */
+.particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* ===============================
+   DESKTOP SPACING IMPROVEMENT
+================================= */
+@media (min-width: 1024px) {
+  .hero-container {
+    gap: 60px; /* more breathing space on large screens */
+  }
+
+  .image-ring img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .hero-text {
+    max-width: 750px;
+  }
+}
+
+/* ===============================
+   TABLET
+================================= */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .image-ring img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 480px) {
+  .hero {
+    padding: 70px 16px;
+  }
+
+  .hero-container {
+    gap: 30px;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .typing {
+    font-size: 1.1rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .image-ring img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.hero,
+.hero * {
+  max-width: 100%;
+}
+
+
+
+
+
+/* ===============================
+   FORCE CLEAN STACK ON MOBILE
+================================= */
+@media (max-width: 768px) {
+  .hero-container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    gap: 30px;
+  }
+
+  /* IMAGE FIX */
+  .hero-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    transform: none !important; /* prevents tilt/animation breaking layout */
+  }
+
+  .image-ring {
+    margin: 0 auto;
+  }
+
+  .image-ring img {
+    width: 220px;
+    height: 220px;
+  }
+
+  /* TEXT FIX */
+  .hero-text {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px; /* prevents touching screen edges */
+  }
+
+  .hero-text p {
+    text-align: center;
+  }
+}

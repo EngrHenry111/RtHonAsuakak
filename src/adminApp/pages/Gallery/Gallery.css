@@ -1,0 +1,156 @@
+/* ===============================
+   ADMIN GALLERY PAGE
+================================= */
+.admin-gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+/* Title */
+.admin-gallery h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+/* ===============================
+   UPLOAD AREA
+================================= */
+.admin-gallery input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+
+  border-radius: 10px;
+  border: 1px dashed rgba(255,255,255,0.2);
+
+  background: rgba(255,255,255,0.04);
+  color: var(--text-light);
+
+  cursor: pointer;
+}
+
+/* Upload button */
+.admin-gallery button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  margin-bottom: 25px;
+}
+
+.admin-gallery button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow);
+}
+
+/* ===============================
+   IMAGE GRID
+================================= */
+.admin-gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-gallery > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+/* ===============================
+   IMAGE CARD
+================================= */
+.admin-gallery > div > div {
+  position: relative;
+
+  border-radius: 12px;
+  overflow: hidden;
+
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Image */
+.admin-gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+
+  transition: transform 0.3s ease;
+}
+
+/* Hover zoom */
+.admin-gallery > div > div:hover img {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   DELETE OVERLAY BUTTON
+================================= */
+.admin-gallery > div > div button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  background: rgba(220, 20, 60, 0.9);
+  border: none;
+  border-radius: 6px;
+
+  padding: 4px 8px;
+  font-size: 0.7rem;
+  color: white;
+
+  cursor: pointer;
+
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* Show on hover */
+.admin-gallery > div > div:hover button {
+  opacity: 1;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  .admin-gallery {
+    padding: 30px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-gallery {
+    padding: 25px 14px;
+  }
+
+  .admin-gallery h2 {
+    font-size: 1.4rem;
+  }
+
+  .admin-gallery img {
+    height: 100px;
+  }
+}
+
+/* ===============================
+   OVERFLOW PROTECTION
+================================= */
+.admin-gallery,
+.admin-gallery * {
+  max-width: 100%;
+}

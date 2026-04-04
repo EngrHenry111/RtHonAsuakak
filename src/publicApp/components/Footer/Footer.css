@@ -1,0 +1,144 @@
+/* ===== FOOTER BASE ===== */
+.footer {
+  background: #0a0a0a;
+  color: #ccc;
+  padding: 50px 20px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== CONTAINER ===== */
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* ===== BRAND ===== */
+.footer-brand h2 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* ===== LINKS ===== */
+.footer-links h4,
+.footer-social h4 {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  display: block;
+  text-decoration: none;
+  color: #bbb;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+/* ===== SOCIAL ===== */
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #bbb;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--primary);
+}
+
+/* ===== BOTTOM ===== */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 16px;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+
+  transition: 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Glow hover */
+.icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: var(--glow);
+}
+
+/* Brand colors on hover */
+.icon.facebook:hover {
+  background: #1877f2;
+}
+
+.icon.instagram:hover {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.icon.youtube:hover {
+  background: #ff0000;
+}
+
+.icon.tiktok:hover {
+  background: #000;
+}
+
+.icon.linkedin:hover {
+  background: #0077b5;
+}
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-icons {
+    align-items: center;
+  }
+}
