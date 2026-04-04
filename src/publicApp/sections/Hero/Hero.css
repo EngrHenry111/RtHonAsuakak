@@ -19,7 +19,7 @@
 }
 
 /* ===============================
-   CONTAINER (VERTICAL LAYOUT)
+   CONTAINER
 ================================= */
 .hero-container {
   position: relative;
@@ -32,23 +32,29 @@
 
   text-align: center;
 
-  gap: 40px; /* spacing between image and text */
+  gap: 40px;
 
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
 
   margin: 0 auto;
 }
 
 /* ===============================
-   IMAGE SECTION (TOP)
+   IMAGE SECTION
 ================================= */
 .hero-image-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 0px;
+  width: 100%;
+  animation: floatY 5s ease-in-out infinite;
+}
+
+/* Prevent tilt from breaking layout */
+.hero-image-wrapper > div {
+  width: fit-content;
 }
 
 /* Ring */
@@ -69,9 +75,10 @@
 }
 
 /* ===============================
-   TEXT SECTION (BOTTOM)
+   TEXT SECTION
 ================================= */
 .hero-text {
+  width: 100%;
   max-width: 700px;
 }
 
@@ -85,7 +92,7 @@
 
 /* Typing */
 .typing {
-  font-size: clamp(1.5rem, 2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: var(--secondary);
   margin-bottom: 15px;
 }
@@ -104,19 +111,21 @@
 }
 
 /* ===============================
-   ANIMATIONS (SAFE)
+   ANIMATIONS
 ================================= */
 @keyframes rotateRing {
-  to { transform: rotate(360deg); }
-}
-
-.hero-image-wrapper {
-  animation: floatY 5s ease-in-out infinite;
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes floatY {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 /* ===============================
@@ -129,16 +138,16 @@
 }
 
 /* ===============================
-   DESKTOP SPACING IMPROVEMENT
+   DESKTOP
 ================================= */
 @media (min-width: 1024px) {
   .hero-container {
-    gap: 60px; /* more breathing space on large screens */
+    gap: 60px;
   }
 
   .image-ring img {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
   }
 
   .hero-text {
@@ -154,9 +163,25 @@
     padding: 80px 20px;
   }
 
+  .hero-container {
+    gap: 30px;
+  }
+
+  .hero-image-wrapper {
+    transform: none !important;
+  }
+
   .image-ring img {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-text {
+    padding: 0 10px;
+  }
+
+  .hero-text p {
+    text-align: center;
   }
 }
 
@@ -166,10 +191,6 @@
 @media (max-width: 480px) {
   .hero {
     padding: 70px 16px;
-  }
-
-  .hero-container {
-    gap: 30px;
   }
 
   .hero-text h1 {
@@ -182,66 +203,19 @@
 
   .hero-text p {
     font-size: 0.9rem;
+    text-align: justify;
   }
 
   .image-ring img {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
   }
 }
 
 /* ===============================
-   OVERFLOW PROTECTION
+   SAFETY
 ================================= */
 .hero,
 .hero * {
   max-width: 100%;
-}
-
-
-
-
-
-/* ===============================
-   FORCE CLEAN STACK ON MOBILE
-================================= */
-@media (max-width: 768px) {
-  .hero-container {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-    gap: 30px;
-  }
-
-  /* IMAGE FIX */
-  .hero-image-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    transform: none !important; /* prevents tilt/animation breaking layout */
-  }
-
-  .image-ring {
-    margin: 0 auto;
-  }
-
-  .image-ring img {
-    width: 220px;
-    height: 220px;
-  }
-
-  /* TEXT FIX */
-  .hero-text {
-    width: 100%;
-    max-width: 100%;
-    padding: 0 10px; /* prevents touching screen edges */
-  }
-
-  .hero-text p {
-    text-align: center;
-  }
 }

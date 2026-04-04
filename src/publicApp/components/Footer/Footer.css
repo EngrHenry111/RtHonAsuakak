@@ -81,10 +81,13 @@
 }
 
 /* ===== SOCIAL ICONS ===== */
+/* ===== SOCIAL ICONS GRID ===== */
 .social-icons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 per row */
   gap: 12px;
   margin-top: 10px;
+  justify-items: center;
 }
 
 .icon {
@@ -130,6 +133,30 @@
 
 .icon.linkedin:hover {
   background: #0077b5;
+}
+
+.icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 18px;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover effect */
+.icon:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: var(--glow);
 }
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {

@@ -43,22 +43,6 @@ const Hero = () => {
   return (
     <section className="hero">
 
-
- {/* IMAGE WITH 3D TILT */}
-    <div className="img">
-        <Tilt options={{ max: 25, scale: 1.05 }}>
-          <motion.div
-            className="hero-image-wrapper"
-            initial={{ opacity: 0, x: 80 }}
-            animate={{ opacity: 1, x: 0 }}
-          >
-            <div className="image-ring">
-              <img src={profile.image} alt="Chairman" />
-            </div>
-          </motion.div>
-        </Tilt>
-        </div>
-
       {/* PARTICLES */}
       <Particles
         options={{
@@ -74,34 +58,41 @@ const Hero = () => {
 
       <div className="hero-container">
 
+        {/* IMAGE */}
+        <Tilt options={{ max: 25, scale: 1.05 }}>
+          <motion.div
+            className="hero-image-wrapper"
+            initial={{ opacity: 0, y: -40 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            <div className="image-ring">
+              <img src={profile.image} alt="Chairman" />
+            </div>
+          </motion.div>
+        </Tilt>
+
         {/* TEXT */}
         <motion.div
           className="hero-text"
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
         >
           <h1>{profile.name}</h1>
           <h2 className="typing">{text}</h2>
           <p>{profile.bio}</p>
 
-          {/* <button className="btn glow">Explore Leadership</button> */}
-        {/* <a href="#leadership" className="btn glow">
-          Explore Leadership
-        </a> */}
-
-              <button
-          className="btn glow"
-          onClick={() => {
-            document.getElementById("leadership")?.scrollIntoView({
-              behavior: "smooth"
-            });
+          <button
+            className="btn glow"
+            onClick={() => {
+              document.getElementById("leadership")?.scrollIntoView({
+                behavior: "smooth"
+              });
             }}
-                  >
-              Explore Leadership
-            </button>
+          >
+            Explore Leadership
+          </button>
         </motion.div>
 
-       
       </div>
     </section>
   );
