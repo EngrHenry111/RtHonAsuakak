@@ -1,5 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
+import Education from "../../sections/Education/Education";
+import Skills from "../../sections/Skills/Skills";
 
 /**
  * Lazy-loaded Sections
@@ -39,6 +41,8 @@ const Home = () => {
         <About />
         <Leadership />
         <Achievements />
+        <Education/>
+        <Skills/>
         <Gallery />
         <News />
       </Suspense>
