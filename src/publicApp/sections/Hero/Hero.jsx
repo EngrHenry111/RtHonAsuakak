@@ -6,7 +6,7 @@ import { Tilt } from "react-tilt";
 import "./Hero.css";
 
 const titles = [
-  "Executive Chairman",
+  "Executive Chairman, Ibiono Ibom LGA",
   "Community Leader",
   "Public Servant",
   "Visionary Leader"

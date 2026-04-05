@@ -11,7 +11,7 @@ const Leadership = () => {
   }, []);
 
   return (
-    <section className="leadership">
+    <section id="leadership" className="leadership">
       <h2>Leadership Journey</h2>
 
       <div className="timeline">

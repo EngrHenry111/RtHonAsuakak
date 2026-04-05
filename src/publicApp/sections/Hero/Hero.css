@@ -131,11 +131,19 @@
 /* ===============================
    PARTICLES
 ================================= */
+
 .particles {
   position: absolute;
   inset: 0;
   z-index: 0;
+
+  pointer-events: none; /* 🔥 THIS FIXES IT */
 }
+/* .particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+} */
 
 /* ===============================
    DESKTOP
