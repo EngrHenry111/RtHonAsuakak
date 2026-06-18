@@ -5,9 +5,23 @@ import "./Achievement.css";
 const Achievements = () => {
   const [data, setData] = useState([]);
 
+  // useEffect(() => {
+  //   API.get("/achievement").then(res => setData(res.data));
+  // }, []);
+
   useEffect(() => {
-    API.get("/achievement").then(res => setData(res.data));
-  }, []);
+  API.get("/achievement")
+    .then((res) => {
+
+      const sorted =
+        res.data.sort(
+          (a, b) =>
+            b.year - a.year
+        );
+
+      setData(sorted);
+    });
+}, []);
 
   return (
     <section className="achievements">
