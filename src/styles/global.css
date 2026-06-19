@@ -52,3 +52,10 @@ body {
   transform: scale(1.05);
   box-shadow: var(--glow);
 }
+
+html,
+body,
+#root {
+  overflow-x: hidden;
+  width: 100%;
+}
