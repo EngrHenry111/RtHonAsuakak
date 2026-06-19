@@ -1,6 +1,6 @@
-/* ===============================
+/* ==========================================
    HERO SECTION
-================================= */
+========================================== */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -15,62 +15,59 @@
   overflow: hidden;
   isolation: isolate;
 
-  background: radial-gradient(circle at center, #020617, #000);
+  background:
+    radial-gradient(
+      circle at center,
+      #020617,
+      #000
+    );
 }
 
-/* ===============================
+/* ==========================================
    CONTAINER
-================================= */
+========================================== */
 .hero-container {
   position: relative;
   z-index: 2;
 
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   text-align: center;
 
   gap: 40px;
-
-  max-width: 900px;
-  width: 100%;
-
-  margin: 0 auto;
 }
 
-/* ===============================
+/* ==========================================
    IMAGE SECTION
-================================= */
+========================================== */
 .hero-image-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  width: 100%;
-  animation: floatY 5s ease-in-out infinite;
+  animation:
+    floatY 5s ease-in-out infinite;
 }
 
-/* Prevent tilt from breaking layout */
-.hero-image-wrapper > div {
+.hero-avatar {
   width: fit-content;
 }
 
-/* Ring */
-/* .image-ring {
-  padding: 12px;
-  border-radius: 100%;
-  background: linear-gradient(45deg, var(--primary), var(--secondary));
-  animation: rotateRing 10s linear infinite;
-} */
-
+/* ==========================================
+   ROTATING RING
+========================================== */
 .image-ring {
-  width: 320px;
-  height: 320px;
+  width: clamp(220px, 35vw, 320px);
+  aspect-ratio: 1;
 
   padding: 8px;
-
   border-radius: 50%;
 
   display: flex;
@@ -85,24 +82,50 @@
     var(--primary)
   );
 
-  animation: rotateRing 8s linear infinite;
+  animation: ringIntroRotate 2s ease-out forwards;
 
   box-shadow:
     0 0 15px var(--primary),
-    0 0 30px var(--secondary),
-    0 0 60px rgba(255,255,255,0.15);
+    0 0 35px var(--secondary);
 }
 
-/* Image */
-/* .image-ring img {
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  border: 6px solid #f5b25adc;
-  object-fit: cover;
-} */
+@keyframes ringIntroRotate {
+  from {
+    transform: rotate(0deg);
+  }
 
-.image-ring img {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   IMAGE HOLDER
+   COUNTER ROTATION
+========================================== */
+.image-holder {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  animation: imageIntroRotate 1.5s ease-out forwards;
+}
+
+@keyframes imageIntroRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ==========================================
+   PROFILE IMAGE
+========================================== */
+.image-holder img {
   width: 100%;
   height: 100%;
 
@@ -113,155 +136,110 @@
   border: 6px solid #020617;
 
   background: #020617;
+
+  display: block;
 }
 
-/* ===============================
-   TEXT SECTION
-================================= */
+/* ==========================================
+   TEXT
+========================================== */
 .hero-text {
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
 }
 
-/* Name */
 .hero-text h1 {
-  font-size: clamp(2.3rem, 4vw, 3rem);
-  font-weight: 700;
+  font-size:
+    clamp(
+      2.3rem,
+      4vw,
+      3rem
+    );
+
   color: var(--primary);
+
   margin-bottom: 10px;
 }
 
-/* Typing */
 .typing {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: var(--secondary);
-  margin-bottom: 15px;
+
+  font-size:
+    clamp(
+      1.2rem,
+      2vw,
+      1.5rem
+    );
+
+  margin-bottom: 20px;
 }
 
-/* Bio */
 .hero-text p {
-  font-size: 1rem;
   line-height: 1.8;
+
   margin-bottom: 25px;
+
   text-align: justify;
 }
 
-/* Button */
-.hero-text .btn {
-  margin-top: 10px;
+/* ==========================================
+   PARTICLES
+========================================== */
+.particles {
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
 }
 
-/* ===============================
+/* ==========================================
    ANIMATIONS
-================================= */
-/* @keyframes rotateRing {
+========================================== */
+@keyframes rotateRing {
+  from {
+    transform:
+      rotate(0turn);
+  }
+
   to {
-    transform: rotate(360deg);
+    transform:
+      rotate(1turn);
+  }
+}
+
+@keyframes counterRotate {
+  from {
+    transform:
+      rotate(0turn);
+  }
+
+  to {
+    transform:
+      rotate(-1turn);
   }
 }
 
 @keyframes floatY {
-  0%, 100% {
-    transform: translateY(0);
+  0%,
+  100% {
+    transform:
+      translateY(0);
   }
+
   50% {
-    transform: translateY(-15px);
-  }
-} */
-
-@keyframes rotateRing {
-  from {
-    transform: rotate(0turn);
-  }
-
-  to {
-    transform: rotate(1turn);
+    transform:
+      translateY(-15px);
   }
 }
 
-
-.image-ring {
-  animation: rotateRing 8s linear infinite;
-}
-
-.image-holder {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-
-  overflow: hidden;
-
-  animation: counterRotate 8s linear infinite;
-}
-
-
-@keyframes counterRotate {
-  from {
-    transform: rotate(0turn);
-  }
-
-  to {
-    transform: rotate(-1turn);
-  }
-}
-/* ===============================
-   PARTICLES
-================================= */
-
-.particles {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-
-  pointer-events: none; /* 🔥 THIS FIXES IT */
-}
-/* .particles {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-} */
-
-/* ===============================
-   DESKTOP
-================================= */
-@media (min-width: 1024px) {
-  .hero-container {
-    gap: 60px;
-  }
-
-  .image-ring img {
-    width: 300px;
-    height: 300px;
-  }
-
-  .hero-text {
-    max-width: 750px;
-  }
-}
-
-/* ===============================
+/* ==========================================
    TABLET
-================================= */
+========================================== */
 @media (max-width: 768px) {
   .hero {
     padding: 80px 20px;
-  }
-
-  .hero-container {
-    gap: 30px;
-  }
-
-  .hero-image-wrapper {
-    transform: none !important;
-  }
-
-  .image-ring img {
-    width: 220px;
-    height: 220px;
-  }
-
-  .hero-text {
-    padding: 0 10px;
   }
 
   .hero-text p {
@@ -269,9 +247,9 @@
   }
 }
 
-/* ===============================
+/* ==========================================
    MOBILE
-================================= */
+========================================== */
 @media (max-width: 480px) {
   .hero {
     padding: 70px 16px;
@@ -282,24 +260,19 @@
   }
 
   .typing {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
 
   .hero-text p {
     font-size: 0.9rem;
-    text-align: justify;
-  }
-
-  .image-ring img {
-    width: 180px;
-    height: 180px;
   }
 }
 
-/* ===============================
+/* ==========================================
    SAFETY
-================================= */
+========================================== */
 .hero,
 .hero * {
+  box-sizing: border-box;
   max-width: 100%;
 }

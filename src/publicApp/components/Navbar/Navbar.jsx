@@ -23,7 +23,7 @@ const Navbar = () => {
         />
 
         <div className="brand-text">
-          <h3>RT. HON. ASUAKAK UDO UMOH</h3>
+          <h3>RT. HON. OBONG ASUAKAK UMOH</h3>
           <span>Executive Chairman</span>
         </div>
 

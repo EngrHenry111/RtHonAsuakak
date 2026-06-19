@@ -9,7 +9,7 @@ const titles = [
   "Executive Chairman, Ibiono Ibom LGA",
   "Community Leader",
   "Public Servant",
-  "Visionary Leader"
+  "Visionary Leader",
 ];
 
 const Hero = () => {
@@ -17,89 +17,140 @@ const Hero = () => {
   const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
 
-  // FETCH PROFILE
   useEffect(() => {
-    API.get("/profile").then(res => setProfile(res.data[0]));
+    API.get("/profile").then((res) =>
+      setProfile(res.data[0])
+    );
   }, []);
 
-  // TYPEWRITER EFFECT
   useEffect(() => {
     let current = titles[index];
     let i = 0;
 
     const typing = setInterval(() => {
       setText(current.slice(0, i++));
+
       if (i > current.length) {
         clearInterval(typing);
-        setTimeout(() => setIndex((prev) => (prev + 1) % titles.length), 2000);
+
+        setTimeout(() => {
+          setIndex(
+            (prev) =>
+              (prev + 1) % titles.length
+          );
+        }, 2000);
       }
     }, 100);
 
     return () => clearInterval(typing);
   }, [index]);
 
-  if (!profile) return <p>Loading...</p>;
+  if (!profile)
+    return <p>Loading...</p>;
 
   return (
     <section className="hero">
 
       {/* PARTICLES */}
       <Particles
+        className="particles"
         options={{
           particles: {
-            number: { value: 40 },
-            size: { value: 2 },
-            move: { speed: 1 },
-            opacity: { value: 0.5 }
-          }
+            number: {
+              value: 40,
+            },
+            size: {
+              value: 2,
+            },
+            move: {
+              speed: 1,
+            },
+            opacity: {
+              value: 0.5,
+            },
+          },
         }}
-        className="particles"
       />
 
       <div className="hero-container">
 
         {/* IMAGE */}
-        <Tilt options={{ max: 25, scale: 1.05 }}>
+        <Tilt
+          options={{
+            max: 10,
+            scale: 1.02,
+            speed: 1000,
+          }}
+        >
           <motion.div
             className="hero-image-wrapper"
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{
+              opacity: 0,
+              y: -40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
           >
-            {/* <div className="image-ring">
-              <img src={profile.image} alt="Chairman" />
-            </div> */}
+            <div className="hero-avatar">
 
-            <div className="image-ring">
-            <div className="image-holder">
-              <img src={profile.image} alt="Chairman" />
+              <div className="image-ring">
+
+                <div className="image-holder">
+
+                  <img
+                    src={profile.image}
+                    alt={profile.name}
+                  />
+
+                </div>
+
+              </div>
+
             </div>
-          </div>
           </motion.div>
         </Tilt>
 
         {/* TEXT */}
         <motion.div
           className="hero-text"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{
+            opacity: 0,
+            y: 40,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
         >
           <h1>{profile.name}</h1>
-          <h2 className="typing">{text}</h2>
+
+          <h2 className="typing">
+            {text}
+          </h2>
+
           <p>{profile.bio}</p>
 
           <button
             className="btn glow"
-            onClick={() => {
-              document.getElementById("leadership")?.scrollIntoView({
-                behavior: "smooth"
-              });
-            }}
+            onClick={() =>
+              document
+                .getElementById(
+                  "leadership"
+                )
+                ?.scrollIntoView({
+                  behavior:
+                    "smooth",
+                })
+            }
           >
             Explore Leadership
           </button>
         </motion.div>
 
       </div>
+
     </section>
   );
 };
