@@ -65,9 +65,15 @@ const Hero = () => {
             initial={{ opacity: 0, y: -40 }}
             animate={{ opacity: 1, y: 0 }}
           >
+            {/* <div className="image-ring">
+              <img src={profile.image} alt="Chairman" />
+            </div> */}
+
             <div className="image-ring">
+            <div className="image-holder">
               <img src={profile.image} alt="Chairman" />
             </div>
+          </div>
           </motion.div>
         </Tilt>
 

@@ -1,156 +1,311 @@
-/* ===============================
+/* ==========================================
    ADMIN GALLERY PAGE
-================================= */
+========================================== */
 .admin-gallery {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+}
 
-  background: rgba(255,255,255,0.03);
+/* ==========================================
+   PAGE TITLE
+========================================== */
+.admin-gallery h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+.gallery-form {
+  background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
+
   border-radius: 16px;
+  padding: 25px;
+
+  margin-bottom: 40px;
+
   backdrop-filter: blur(10px);
 }
 
-/* Title */
-.admin-gallery h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  margin-bottom: 25px;
-}
-
-/* ===============================
-   UPLOAD AREA
-================================= */
-.admin-gallery input[type="file"] {
+.gallery-form input,
+.gallery-form textarea,
+.gallery-form select {
   width: 100%;
-  padding: 10px;
+
+  padding: 14px;
   margin-bottom: 15px;
 
   border-radius: 10px;
-  border: 1px dashed rgba(255,255,255,0.2);
 
-  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.05);
   color: var(--text-light);
 
+  outline: none;
+}
+
+.gallery-form input:focus,
+.gallery-form textarea:focus,
+.gallery-form select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+option{
+  color: black;
+}
+
+.gallery-form textarea {
+  resize: vertical;
+}
+
+.gallery-form input[type="file"] {
+  border-style: dashed;
   cursor: pointer;
 }
 
-/* Upload button */
-.admin-gallery button {
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
+.gallery-form button {
+  width: 100%;
 
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary)
+  );
+
   color: white;
+  font-weight: 600;
 
   cursor: pointer;
   transition: 0.3s ease;
-
-  margin-bottom: 25px;
 }
 
-.admin-gallery button:hover {
+.gallery-form button:hover {
   transform: translateY(-2px);
   box-shadow: var(--glow);
 }
 
-/* ===============================
-   IMAGE GRID
-================================= */
-.admin-gallery {
+/* ==========================================
+   EVENT LIST
+========================================== */
+.gallery-list {
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
-.admin-gallery > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 15px;
-}
+/* ==========================================
+   EVENT CARD
+========================================== */
+.gallery-card {
+  display: flex;
+  gap: 25px;
 
-/* ===============================
-   IMAGE CARD
-================================= */
-.admin-gallery > div > div {
-  position: relative;
-
-  border-radius: 12px;
-  overflow: hidden;
+  background: rgba(255,255,255,0.04);
 
   border: 1px solid rgba(255,255,255,0.08);
-}
 
-/* Image */
-.admin-gallery img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  display: block;
+  border-radius: 18px;
+  overflow: hidden;
 
-  transition: transform 0.3s ease;
-}
+  backdrop-filter: blur(10px);
 
-/* Hover zoom */
-.admin-gallery > div > div:hover img {
-  transform: scale(1.05);
-}
-
-/* ===============================
-   DELETE OVERLAY BUTTON
-================================= */
-.admin-gallery > div > div button {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-
-  background: rgba(220, 20, 60, 0.9);
-  border: none;
-  border-radius: 6px;
-
-  padding: 4px 8px;
-  font-size: 0.7rem;
-  color: white;
-
-  cursor: pointer;
-
-  opacity: 0;
   transition: 0.3s ease;
 }
 
-/* Show on hover */
-.admin-gallery > div > div:hover button {
-  opacity: 1;
+.gallery-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--glow);
 }
 
-/* ===============================
+/* ==========================================
+   IMAGE
+========================================== */
+.gallery-card img {
+  width: 320px;
+  height: 260px;
+
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+.card-content {
+  flex: 1;
+  padding: 20px;
+  position: relative;
+}
+
+/* ==========================================
+   CALENDAR DATE BADGE
+========================================== */
+.card-content::before {
+  content: "";
+
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 70px;
+  height: 80px;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+.card-content h3 {
+  font-size: 1.4rem;
+  color: var(--primary);
+
+  margin-bottom: 12px;
+
+  max-width: calc(100% - 90px);
+}
+
+/* ==========================================
+   CATEGORY BADGE
+========================================== */
+.card-content span {
+  display: inline-block;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.08);
+
+  color: var(--text-light);
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  margin-bottom: 12px;
+}
+
+/* ==========================================
+   DETAILS
+========================================== */
+.card-content p {
+  margin-bottom: 10px;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* ==========================================
+   DATE STYLE
+========================================== */
+.card-content p:nth-of-type(2) {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.actions button {
+  flex: 1;
+
+  border: none;
+  border-radius: 8px;
+
+  padding: 10px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.actions button:first-child {
+  background: #0ea5e9;
+  color: white;
+}
+
+.actions button:first-child:hover {
+  background: #0284c7;
+}
+
+.actions button:last-child {
+  background: crimson;
+  color: white;
+}
+
+.actions button:last-child:hover {
+  background: red;
+  box-shadow: 0 0 10px red;
+}
+
+/* ==========================================
    RESPONSIVE
-================================= */
-@media (max-width: 768px) {
-  .admin-gallery {
-    padding: 30px 16px;
+========================================== */
+@media (max-width: 900px) {
+  .gallery-card {
+    flex-direction: column;
+  }
+
+  .gallery-card img {
+    width: 100%;
+    height: 280px;
+  }
+
+  .card-content h3 {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .admin-gallery {
-    padding: 25px 14px;
+    padding: 20px 12px;
   }
 
   .admin-gallery h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
-  .admin-gallery img {
-    height: 100px;
+  .gallery-card img {
+    height: 220px;
+  }
+
+  .actions {
+    flex-direction: column;
   }
 }
 
-/* ===============================
-   OVERFLOW PROTECTION
-================================= */
+/* ==========================================
+   SAFETY
+========================================== */
 .admin-gallery,
 .admin-gallery * {
+  box-sizing: border-box;
   max-width: 100%;
+  word-break: break-word;
 }
