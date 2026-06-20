@@ -10,42 +10,75 @@ import {
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-container">
 
-        {/* BRAND */}
-        <div className="footer-brand">
-          <h2>RT. HON. OBONG ASUAKAK UMOH</h2>
-          <p>Executive Chairman, Ibiono Ibom LGA</p>
-        </div>
+      <div className="footer-content">
 
-        {/* LINKS */}
+        <h2>
+          RT. HON. OBONG ASUAKAK UMOH
+        </h2>
+
+        <p className="footer-title">
+          Executive Chairman, Ibiono Ibom LGA
+        </p>
+
+        {/* QUICK LINKS */}
         <div className="footer-links">
-          <h4>Quick Links</h4>
+
           <a href="/">Home</a>
           <a href="/about">About</a>
           <a href="/leadership">Leadership</a>
           <a href="/achievements">Achievements</a>
+          <a href="/education">Education</a>
+          <a href="/skills">Skills</a>
+          <a href="/gallery">Gallery</a>
           <a href="/news">News</a>
+
         </div>
 
-        {/* SOCIAL */}
-        <div className="footer-social">
-          <h4>Connect</h4>
+        {/* SOCIAL ICONS */}
+        <div className="social-icons">
 
-          <div className="social-icons">
-            <a href="#" className="icon facebook"><FaFacebookF /></a>
-            <a href="#" className="icon instagram"><FaInstagram /></a>
-            <a href="#" className="icon youtube"><FaYoutube /></a>
-            <a href="#" className="icon tiktok"><FaTiktok /></a>
-            <a href="#" className="icon linkedin"><FaLinkedinIn /></a>
-          </div>
+          <a href="#" className="icon facebook">
+            <FaFacebookF />
+          </a>
+
+          <a href="#" className="icon instagram">
+            <FaInstagram />
+          </a>
+
+          <a href="#" className="icon youtube">
+            <FaYoutube />
+          </a>
+
+          <a href="#" className="icon tiktok">
+            <FaTiktok />
+          </a>
+
+          <a href="#" className="icon linkedin">
+            <FaLinkedinIn />
+          </a>
+
         </div>
 
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} All Rights Reserved</p>
+
+        <p>
+          © {new Date().getFullYear()}
+          {" "}
+          RT. HON. OBONG ASUAKAK UMOH.
+          All Rights Reserved.
+        </p>
+
+        <p>
+          Developed by
+          {" "}
+          <span>EngrHenryTech</span>
+        </p>
+
       </div>
+
     </footer>
   );
 };
