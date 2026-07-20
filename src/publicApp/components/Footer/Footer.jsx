@@ -38,7 +38,7 @@ const Footer = () => {
         {/* SOCIAL ICONS */}
         <div className="social-icons">
 
-          <a href="#" className="icon facebook">
+          <a href="https://www.facebook.com/share/1ZUNPkQeDa/" className="icon facebook">
             <FaFacebookF />
           </a>
 
@@ -54,7 +54,7 @@ const Footer = () => {
             <FaTiktok />
           </a>
 
-          <a href="#" className="icon linkedin">
+          <a href="https://www.linkedin.com/in/obongasuakakumoh" className="icon linkedin">
             <FaLinkedinIn />
           </a>
 
