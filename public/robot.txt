@@ -1,3 +1,5 @@
 User-agent: *
+
 Allow: /
-Sitemap: https://yourdomain.com/sitemap.xml
+
+Sitemap: https://rt-hon-asuakak-k2o9.vercel.app/sitemap.xml
