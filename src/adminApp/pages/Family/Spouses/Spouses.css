@@ -1,0 +1,405 @@
+/* ==========================================
+   SPOUSES ADMIN
+========================================== */
+
+.admin-spouses {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  color: var(--text-light);
+}
+
+.admin-spouses h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 35px;
+  color: var(--text-light);
+}
+
+/* ==========================================
+   ALERTS
+========================================== */
+
+.success-message,
+.error-message {
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  font-weight: 500;
+}
+
+.success-message {
+  background: rgba(34, 197, 94, .12);
+  border: 1px solid rgba(34, 197, 94, .25);
+  color: #4ade80;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, .12);
+  border: 1px solid rgba(239, 68, 68, .25);
+  color: #f87171;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.spouse-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+
+  padding: 30px;
+  margin-bottom: 50px;
+
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+
+  box-shadow: var(--glow);
+}
+
+.spouse-form input,
+.spouse-form textarea,
+.spouse-form select {
+  width: 100%;
+  padding: 14px 16px;
+
+  background: rgba(255,255,255,.05);
+  color: var(--text-light);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: .95rem;
+
+  transition: .3s ease;
+}
+
+.spouse-form textarea {
+  min-height: 140px;
+  resize: vertical;
+  grid-column: 1/-1;
+}
+
+.spouse-form input:focus,
+.spouse-form textarea:focus,
+.spouse-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+.spouse-form input::placeholder,
+.spouse-form textarea::placeholder {
+  color: rgba(241,245,249,.45);
+}
+
+/* ==========================================
+   IMAGE PREVIEW
+========================================== */
+
+.spouse-preview {
+  width: 180px;
+  height: 180px;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,.08);
+
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   CHECKBOX
+========================================== */
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.spouse-buttons {
+  grid-column: 1/-1;
+
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.spouse-buttons button {
+  padding: 14px 30px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: white;
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  transition: .35s ease;
+}
+
+.spouse-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+}
+
+.cancel-btn {
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #dc2626
+  ) !important;
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.admin-spouses hr {
+  margin: 45px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+}
+
+/* ==========================================
+   SPOUSE LIST
+========================================== */
+
+.spouse-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.spouse-card {
+  overflow: hidden;
+
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+
+  transition: .35s ease;
+}
+
+.spouse-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(14,165,233,.30);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.spouse-card-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.spouse-content {
+  padding: 22px;
+}
+
+.spouse-content h3 {
+  color: var(--primary);
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+
+.spouse-content p {
+  color: rgba(241,245,249,.85);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.spouse-content strong {
+  color: var(--text-light);
+}
+
+.spouse-content blockquote {
+  margin: 20px 0;
+
+  padding: 16px;
+
+  background: rgba(255,255,255,.04);
+
+  border-left: 4px solid var(--secondary);
+  border-radius: 12px;
+
+  color: rgba(241,245,249,.90);
+
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  margin: 22px 0;
+}
+
+.status-row span {
+  padding: 7px 14px;
+
+  background: rgba(14,165,233,.12);
+  border: 1px solid rgba(14,165,233,.25);
+  border-radius: 999px;
+
+  color: var(--primary);
+
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.spouse-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.spouse-actions button {
+  flex: 1;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  color: white;
+  font-weight: 600;
+
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary)
+  );
+
+  transition: .3s ease;
+}
+
+.spouse-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #dc2626
+  ) !important;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .spouse-form {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .admin-spouses {
+    padding: 30px 16px 60px;
+  }
+
+  .spouse-list {
+    grid-template-columns: 1fr;
+  }
+
+  .spouse-buttons {
+    flex-direction: column;
+  }
+
+  .spouse-card-image {
+    height: 220px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .spouse-form {
+    padding: 20px;
+  }
+
+  .spouse-preview {
+    width: 100%;
+    height: 220px;
+  }
+
+  .spouse-actions {
+    flex-direction: column;
+  }
+
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+
+.admin-spouses,
+.spouse-list,
+.spouse-card {
+  max-width: 100%;
+}
+
+.spouse-content p,
+.spouse-content blockquote {
+  word-break: break-word;
+}

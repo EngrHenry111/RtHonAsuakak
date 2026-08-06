@@ -1,0 +1,167 @@
+/* ==========================================
+   FAMILY PAGE
+========================================== */
+
+.family-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-dark), #020617);
+  overflow-x: hidden;
+}
+
+/* Decorative background glow */
+
+.family-page::before,
+.family-page::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(120px);
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.family-page::before {
+  top: -180px;
+  left: -180px;
+  background: var(--primary);
+}
+
+.family-page::after {
+  bottom: -220px;
+  right: -220px;
+  background: var(--secondary);
+}
+
+/* Keep every section above background effects */
+
+.family-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   LOADING & ERROR STATE
+========================================== */
+
+.family-loading {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: linear-gradient(
+    135deg,
+    var(--bg-dark),
+    #020617
+  );
+
+  text-align: center;
+}
+
+.family-loading h2 {
+  padding: 28px 36px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+
+  color: var(--text-light);
+
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 600;
+
+  box-shadow: var(--glow);
+
+  animation: familyPulse 1.8s ease-in-out infinite;
+}
+
+/* ==========================================
+   SECTION SPACING
+========================================== */
+
+.family-page section {
+  position: relative;
+}
+
+.family-page section + section {
+  margin-top: -1px;
+}
+
+/* ==========================================
+   LOADING ANIMATION
+========================================== */
+
+@keyframes familyPulse {
+
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(14,165,233,0);
+  }
+
+  50% {
+    transform: scale(1.02);
+    box-shadow: var(--glow);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(14,165,233,0);
+  }
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .family-loading {
+    padding: 30px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .family-loading h2 {
+    padding: 24px;
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .family-loading {
+    padding: 20px;
+  }
+
+  .family-loading h2 {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.2rem;
+    border-radius: 16px;
+  }
+
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+
+.family-page,
+.family-loading {
+  max-width: 100%;
+  overflow-x: hidden;
+}

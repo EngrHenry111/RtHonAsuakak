@@ -25,6 +25,11 @@ import Skills from "./publicApp/sections/Skills/Skills";
 import Education from "./publicApp/sections/Education/Education";
 import EducationPage from "./adminApp/pages/Education/Education";
 import SkillsPage from "./adminApp/pages/Skills/Skills";
+import FamilyInfo from "./adminApp/pages/Family/FamilyInfo/FamilyInfo";
+import Spouses from "./adminApp/pages/Family/Spouses/Spouses";
+import Children from "./adminApp/pages/Family/Children/Children";
+import FamilyGallery from "./adminApp/pages/Family/FamilyGallery/FamilyGallery";
+import Family from "./publicApp/sections/Family/FamilyInfo/FamilyInfo"
 
 function App() {
   return (
@@ -39,6 +44,7 @@ function App() {
         <Route path="/leadership" element={<Leadership />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/family" element={<Family />} />
         <Route path="/news" element={<News />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/education" element={<Education/>} />
@@ -121,6 +127,42 @@ function App() {
           </ProtectedRoute>
         }
       />
+
+      <Route
+    path="/admin/family"
+    element={
+        <ProtectedRoute>
+            <FamilyInfo />
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/admin/spouses"
+    element={
+        <ProtectedRoute>
+            <Spouses />
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/admin/children"
+    element={
+        <ProtectedRoute>
+            <Children />
+        </ProtectedRoute>
+    }
+/>
+
+<Route
+    path="/admin/family-gallery"
+    element={
+        <ProtectedRoute>
+            <FamilyGallery />
+        </ProtectedRoute>
+    }
+/>
 
       
 

@@ -1,0 +1,368 @@
+/* ==========================================
+   FAMILY INFORMATION ADMIN
+========================================== */
+
+.admin-family {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  color: var(--text-light);
+}
+
+.admin-family h2 {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 35px;
+  color: var(--text-light);
+}
+
+/* ==========================================
+   ALERTS
+========================================== */
+
+.success-message,
+.error-message {
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  font-weight: 500;
+}
+
+.success-message {
+  background: rgba(34, 197, 94, .12);
+  border: 1px solid rgba(34, 197, 94, .25);
+  color: #4ade80;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, .12);
+  border: 1px solid rgba(239, 68, 68, .25);
+  color: #f87171;
+}
+
+/* ==========================================
+   FORM
+========================================== */
+
+.family-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+
+  padding: 30px;
+  margin-bottom: 50px;
+
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+
+  box-shadow: var(--glow);
+}
+
+.family-form input,
+.family-form textarea,
+.family-form select {
+  width: 100%;
+  padding: 14px 16px;
+
+  background: rgba(255,255,255,.05);
+  color: var(--text-light);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+
+  font-family: inherit;
+  font-size: .95rem;
+
+  transition: .3s ease;
+}
+
+.family-form textarea {
+  min-height: 150px;
+  resize: vertical;
+  grid-column: 1/-1;
+}
+
+.family-form input:focus,
+.family-form textarea:focus,
+.family-form select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: var(--glow);
+}
+
+.family-form input::placeholder,
+.family-form textarea::placeholder {
+  color: rgba(241,245,249,.45);
+}
+
+/* ==========================================
+   BANNER PREVIEW
+========================================== */
+
+.banner-preview {
+  width: 220px;
+  height: 140px;
+
+  object-fit: cover;
+
+  border-radius: 16px;
+  border: 2px solid rgba(255,255,255,.08);
+
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   CHECKBOX
+========================================== */
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.family-buttons {
+  grid-column: 1/-1;
+
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.family-buttons button {
+  padding: 14px 30px;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  color: #fff;
+  font-weight: 600;
+
+  background: linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+  );
+
+  transition: .35s ease;
+}
+
+.family-buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow);
+}
+
+.cancel-btn {
+  background: linear-gradient(
+      135deg,
+      #ef4444,
+      #dc2626
+  ) !important;
+}
+
+/* ==========================================
+   DIVIDER
+========================================== */
+
+.admin-family hr {
+  margin: 45px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,.08);
+}
+
+/* ==========================================
+   LIST
+========================================== */
+
+.family-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(380px,1fr));
+  gap: 30px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.family-card {
+  overflow: hidden;
+
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+
+  transition: .35s ease;
+}
+
+.family-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(14,165,233,.3);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.family-card-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.family-card h3 {
+  color: var(--primary);
+  margin: 20px 22px 10px;
+  font-size: 1.1rem;
+}
+
+.family-card p {
+  margin: 0 22px 16px;
+  color: rgba(241,245,249,.85);
+  line-height: 1.75;
+}
+
+.family-card ul {
+  margin: 0 22px 22px;
+  padding-left: 20px;
+}
+
+.family-card li {
+  color: rgba(241,245,249,.82);
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+   ACTIONS
+========================================== */
+
+.family-actions {
+  display: flex;
+  gap: 12px;
+
+  padding: 0 22px 24px;
+}
+
+.family-actions button {
+  flex: 1;
+
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+  color: white;
+
+  background: linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+  );
+
+  transition: .3s ease;
+}
+
+.family-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background: linear-gradient(
+      135deg,
+      #ef4444,
+      #dc2626
+  ) !important;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+
+  .family-form {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .admin-family {
+    padding: 30px 16px 60px;
+  }
+
+  .family-list {
+    grid-template-columns: 1fr;
+  }
+
+  .family-buttons {
+    flex-direction: column;
+  }
+
+  .family-card-image {
+    height: 220px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .family-form {
+    padding: 20px;
+  }
+
+  .banner-preview {
+    width: 100%;
+    height: 200px;
+  }
+
+  .family-actions {
+    flex-direction: column;
+  }
+
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+
+.admin-family,
+.family-list,
+.family-card {
+  max-width: 100%;
+}
+
+.family-card p,
+.family-card li {
+  word-break: break-word;
+}

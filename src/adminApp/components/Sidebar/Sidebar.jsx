@@ -31,6 +31,23 @@ const Sidebar = () => {
       <Link to="/admin/news">News</Link>
       <Link to="/admin/profile">Profile</Link>
 
+      <Link to="/admin/family">
+      Family Information
+      </Link>
+
+      <Link to="/admin/spouses">
+          Spouses
+      </Link>
+
+      <Link to="/admin/children">
+          Children
+      </Link>
+
+      <Link to="/admin/family-gallery">
+          Family Gallery
+      </Link>
+      
+
       <button
         className="logout-btn"
         onClick={handleLogout}

@@ -10,6 +10,7 @@ const Hero = lazy(() => import("../../sections/Hero/Hero"));
 const About = lazy(() => import("../../sections/About/About"));
 const Leadership = lazy(() => import("../../sections/leadership/Leadership"));
 const Achievements = lazy(() => import("../../sections/Achievement/Achievement"));
+const Family = lazy(() => import("../../sections/Family/FamilyInfo/FamilyInfo"));
 const Gallery = lazy(() => import("../../sections/Gallery/Gallery"));
 const News = lazy(() => import("../../sections/News/News"));
 
@@ -43,6 +44,7 @@ const Home = () => {
         <Achievements />
         <Education/>
         <Skills/>
+        <Family/>
         <Gallery />
         <News />
       </Suspense>

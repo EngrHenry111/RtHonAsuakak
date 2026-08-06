@@ -66,6 +66,10 @@ const Navbar = () => {
           Skills
         </NavLink>
 
+        <NavLink to="/family" onClick={closeMenu}>
+          Family
+        </NavLink>
+
         <NavLink to="/gallery" onClick={closeMenu}>
           Gallery
         </NavLink>

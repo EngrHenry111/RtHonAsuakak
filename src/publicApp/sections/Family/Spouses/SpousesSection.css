@@ -1,0 +1,292 @@
+/* ==========================================
+   SPOUSES SECTION
+========================================== */
+
+.family-spouses {
+  position: relative;
+  padding: 90px 24px;
+  background: linear-gradient(135deg, var(--bg-dark), #020617);
+  overflow: hidden;
+}
+
+.family-spouses::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left,
+      rgba(14,165,233,.08),
+      transparent 35%),
+    radial-gradient(circle at bottom right,
+      rgba(147,51,234,.08),
+      transparent 35%);
+  pointer-events: none;
+}
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.family-spouses .section-title {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.family-spouses .section-title h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--text-light);
+  margin-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+.family-spouses .section-title p {
+  color: rgba(241,245,249,.82);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.spouse-grid {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.spouse-card {
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: all .35s ease;
+}
+
+.spouse-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(14,165,233,.35);
+  box-shadow: var(--glow);
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.spouse-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+
+.spouse-card:hover .spouse-image {
+  transform: scale(1.06);
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.spouse-info {
+  padding: 24px;
+}
+
+.spouse-info h3 {
+  color: var(--text-light);
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ==========================================
+   OCCUPATION
+========================================== */
+
+.occupation {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 6px 14px;
+  margin-bottom: 18px;
+
+  background: rgba(14,165,233,.12);
+  border: 1px solid rgba(14,165,233,.25);
+  border-radius: 999px;
+
+  color: var(--primary);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   BIOGRAPHY
+========================================== */
+
+.spouse-info p {
+  color: rgba(241,245,249,.85);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.spouse-info blockquote {
+  position: relative;
+
+  margin: 20px 0;
+
+  padding: 18px;
+
+  background: rgba(255,255,255,.04);
+
+  border-left: 4px solid var(--secondary);
+  border-radius: 12px;
+
+  color: rgba(241,245,249,.9);
+
+  font-style: italic;
+  line-height: 1.7;
+}
+
+.spouse-info blockquote::before {
+  content: "❝";
+
+  position: absolute;
+  top: 8px;
+  left: 12px;
+
+  font-size: 1.4rem;
+  color: var(--secondary);
+  opacity: .4;
+}
+
+/* ==========================================
+   MARRIAGE DATE
+========================================== */
+
+.marriage-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 6px;
+
+  padding: 10px 16px;
+
+  background: rgba(34,197,94,.10);
+  border: 1px solid rgba(34,197,94,.25);
+  border-radius: 10px;
+
+  color: var(--accent);
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:992px){
+
+  .family-spouses{
+    padding:80px 20px;
+  }
+
+}
+
+@media (max-width:768px){
+
+  .family-spouses{
+    padding:70px 18px;
+  }
+
+  .family-spouses .section-title{
+    margin-bottom:50px;
+  }
+
+  .family-spouses .section-title h2{
+    font-size:2rem;
+  }
+
+  .spouse-grid{
+    grid-template-columns:1fr;
+  }
+
+  .spouse-image{
+    height:320px;
+  }
+
+}
+
+@media (max-width:480px){
+
+  .family-spouses{
+    padding:60px 16px;
+  }
+
+  .family-spouses .section-title h2{
+    font-size:1.75rem;
+  }
+
+  .family-spouses .section-title p{
+    font-size:.95rem;
+  }
+
+  .spouse-info{
+    padding:20px;
+  }
+
+  .spouse-info h3{
+    font-size:1.25rem;
+  }
+
+  .spouse-image{
+    height:270px;
+  }
+
+  .marriage-date{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+
+}
+
+/* ==========================================
+   SAFETY
+========================================== */
+
+.family-spouses,
+.spouse-grid,
+.spouse-card{
+  max-width:100%;
+}
+
+.spouse-info p,
+.spouse-info blockquote{
+  word-break:break-word;
+}
