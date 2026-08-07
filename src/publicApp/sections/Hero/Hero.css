@@ -283,3 +283,18 @@
   box-sizing: border-box;
   max-width: 100%;
 }
+/* ==========================================
+   TABLET & MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero-text p {
+    text-align: justify;
+  }
+
+}
