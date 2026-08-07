@@ -35,8 +35,7 @@ const Gallery = () => {
       <div className="container">
 
         <h2>
-          Leadership Moments &
-          Achievements
+          AWARDS AND RECOGNITIONS
         </h2>
 
         <div className="events-grid">
