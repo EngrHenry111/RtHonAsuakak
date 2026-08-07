@@ -31,7 +31,7 @@ const Home = () => {
     <>
       {/* ✅ SEO Optimization */}
       <Helmet>
-        <title>Home | Ibiono Ibom Chairman</title>
+        <title>Asuakak umoh | Rt. Hon. Asuakak Umoh</title>
         <meta name="description" content="Official website of Ibiono Ibom Chairman. Stay updated with news, leadership, projects, and achievements." />
         <meta name="keywords" content="Ibiono Ibom, Chairman, Government, News, Projects, Leadership" />
       </Helmet>
