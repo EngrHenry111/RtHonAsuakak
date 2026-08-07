@@ -182,10 +182,11 @@
 
 .hero-text p {
   line-height: 1.8;
-
   margin-bottom: 25px;
-
   text-align: justify;
+
+  /* Add this */
+  white-space: pre-line;
 }
 
 /* ==========================================
